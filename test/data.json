@@ -1,0 +1,24 @@
+[
+    {
+      "firstname": "Peter",
+      "lastname": "Parker",
+      "totalprice": 100,
+      "depositpaid": true,
+      "bookingdates": {
+          "checkin": "2013-02-23",
+          "checkout": "2014-10-23"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    {
+      "firstname": "Tony",
+      "lastname": "Stark",
+      "totalprice": 500,
+      "depositpaid": true,
+      "bookingdates": {
+          "checkin": "2013-02-23",
+          "checkout": "2014-10-23"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  ]
