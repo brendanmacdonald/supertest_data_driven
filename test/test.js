@@ -83,39 +83,39 @@ var schema = {
     ]
 };
 
-const call_booking_api = async function (request_body) {
+const call_booking_api = async (request_body) => {
     return baseUrl.post(apiEndPoint)
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
         .send(request_body);
 }
 
-test_data.forEach(async function (data) {
-    describe(`Book a movie for ${data.firstname}`, function () {
+test_data.forEach(async (data) => {
+    describe(`Book a movie for ${data.firstname}`, () => {
 
-        before(async function () {
+        before(async () => {
             response = await call_booking_api(data);
             body = response.body;
         });
 
-        it('status code is 200', function () {
+        it('status code is 200', () => {
             expect(response.status).to.equal(200);
         });
 
-        it('schema is valid', function () {
+        it('schema is valid', () => {
             expect(tv4.validate(body, schema)).to.be.true;
         });
 
-        it("firstname and lastname are correct", function () {
+        it("firstname and lastname are correct", () => {
             expect(body.booking.firstname).to.equal(data.firstname);
             expect(body.booking.lastname).to.equal(data.lastname);
         });
 
-        it("totalprice value is correct", function () {
+        it("totalprice value is correct", () => {
             expect(body.booking.totalprice).to.equal(data.totalprice);
         });
 
-        it("depositpaid flag is correct", function () {
+        it("depositpaid flag is correct", () => {
             expect(body.booking.depositpaid).to.equal(data.depositpaid);
         });
     });
