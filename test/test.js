@@ -1,11 +1,9 @@
 const supertest = require('supertest');
 const expect = require('chai').expect;
-const mocha = require('mocha')
 const tv4 = require('tv4');
 const fs = require('fs');
 
-
-// Based on blog post at https://medium.com/@shashiraja/convert-postman-api-tests-to-mocha-10705af6e37a
+// Based on blog post at https://goo.gl/4vs9gm
 const test_data = JSON.parse(fs.readFileSync('./test/data.json', 'utf8'));
 const baseUrl = supertest("restful-booker.herokuapp.com");
 const apiEndPoint = "/booking";

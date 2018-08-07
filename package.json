@@ -2,7 +2,6 @@
   "name": "postman-to-mocha",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "mocha test/*.js",
     "posttest": "start mochawesome-report/mochawesome.html"
